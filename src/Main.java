@@ -1,6 +1,7 @@
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Scanner;
 
 public class Main
@@ -9,40 +10,23 @@ public class Main
     {
         System.out.println("\n\nHello, RegistrationApp!\n");
 
-        // Read and store the data from "curriculum.dat"
-        ArrayList<String> curriculum = readFromFile("curriculum.dat");
-        Curriculum curr = new Curriculum(curriculum);
-        // write the data to stdout
-        System.out.println(curr);
+
+        // read and store data from file
+        Curriculum curr = new Curriculum("curriculum.dat");  // Kyrah's ArrayList is hidden in the Curriculum class
+        System.out.println("Curriculum:\n\n" + curr);
+
 
         // Calculate the total hours in the curriculum
-        ArrayList<String> hours = Curriculum.listHours(curriculum);
-        //System.out.println("Hours: " + Curriculum.listHours(curriculum));
-        System.out.println("Total hours: " + Curriculum.countHours(hours));
-
-
+        int totalHours = curr.countHours();
+        System.out.println( "Total hours: " + totalHours );
 
 
         // Count the number of [DEPT] courses
-        // Determine if a course is in the curriculum.
-    }
+        int numCourses = curr.countCourses("MATH");
+        System.out.println("MATH courses: " + numCourses);
 
-    // read and store data from file
-    private static ArrayList<String> readFromFile(String fileName)
-    {
-        ArrayList<String> data = new ArrayList<>();
-        File file = new File(fileName);
-        try (Scanner sc = new Scanner(file))
-        {
-            while (sc.hasNext())
-            {
-                data.add(sc.nextLine());
-            }
-        }
-        catch (FileNotFoundException e)
-        {
-            e.printStackTrace();
-        }
-        return data;
+
+        // Determine if a course is in the curriculum.
+        
     }
    }
