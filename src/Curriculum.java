@@ -1,6 +1,8 @@
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
 import java.util.Scanner;
 
 public class Curriculum
@@ -65,7 +67,7 @@ public class Curriculum
         return hours;
     }
 
-    public int countCourses(String courseName)
+    public int countCourses(String courseDept)
     {
         int count = 0;
         for (String course : curriculum)
@@ -82,7 +84,7 @@ public class Curriculum
                     switch (numCase)
                     {
                         case 1:
-                            if (temp.equals(courseName))
+                            if (temp.equals(courseDept))
                             {
                                 count++;
                             }
@@ -100,6 +102,24 @@ public class Curriculum
             }
         }
         return count;
+    }
+
+    public boolean courseExists(String courseName)
+    {
+        List<String> splitCourseName = Arrays.asList(courseName.split(" "));
+        for (String course : curriculum)
+        {
+            List<String> splitCourse = Arrays.asList(course.split(" "));
+            //System.out.println(splitCourse);
+            if (splitCourse.get(0).equals(splitCourseName.get(0)))
+            {
+                if (splitCourse.get(1).equals(splitCourseName.get(1)))
+                {
+                    return true;
+                }
+            }
+        }
+        return false;
     }
 
 

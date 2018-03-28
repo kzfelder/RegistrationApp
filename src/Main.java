@@ -27,6 +27,7 @@ public class Main
 
 
         // Determine if a course is in the curriculum.
-        
+        boolean courseInCurr = curr.courseExists("MATH 2550");
+        System.out.println("MATH 2550 in curriculum?: " + courseInCurr);
     }
    }
