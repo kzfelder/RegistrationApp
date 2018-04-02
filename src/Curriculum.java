@@ -66,6 +66,16 @@ public class Curriculum
         return courseLs;
     }
 
+    public int countHours()
+    {
+        int total = 0;
+        for (Course course : courses)
+        {
+            total += course.getHours();
+        }
+        return total;
+    }
+
     /*public int countHours()
     {
         ArrayList<String> hours = listHours();
