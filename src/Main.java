@@ -21,12 +21,12 @@ public class Main
 
 
         // Count the number of [DEPT] courses
-        /*int numCourses = curr.countCourses("MATH");
+        int numCourses = curr.countCourses("MATH");
         System.out.println("MATH courses: " + numCourses);
 
 
         // Determine if a course is in the curriculum.
-        boolean courseInCurr = curr.courseExists("MATH 2550");
+        /*boolean courseInCurr = curr.courseExists("MATH 2550");
         System.out.println("MATH 2550 in curriculum?: " + courseInCurr);*/
     }
    }

@@ -76,6 +76,19 @@ public class Curriculum
         return total;
     }
 
+    public int countCourses(String department)
+    {
+        int count = 0;
+        for (Course course : courses)
+        {
+            if (course.getDepartment().equals(department))
+            {
+                count += 1;
+            }
+        }
+        return count;
+    }
+
     /*public int countHours()
     {
         ArrayList<String> hours = listHours();
