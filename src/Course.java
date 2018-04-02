@@ -1,11 +1,18 @@
 public class Course {
     String department;
-    int number;
+    String crn;
     int hours;
+
+    public Course(String department, String crn, int hours)
+    {
+        this.department = department;
+        this.crn = crn;
+        this.hours = hours;
+    }
 
     @Override
     public String toString() {
-        return String.valueOf(department) + " " + String.valueOf(number) + " " + String.valueOf(hours);
+        return department + " " + crn + " " + String.valueOf(hours);
     }
 
     public String getDepartment() {
@@ -16,12 +23,12 @@ public class Course {
         this.department = department;
     }
 
-    public int getNumber() {
-        return number;
+    public String getCrn() {
+        return crn;
     }
 
-    public void setNumber(int number) {
-        this.number = number;
+    public void setCrn(String crn) {
+        this.crn = crn;
     }
 
     public int getHours() {

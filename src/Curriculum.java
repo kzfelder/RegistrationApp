@@ -7,44 +7,66 @@ import java.util.Scanner;
 
 public class Curriculum
 {
-    ArrayList<String> curriculum;
 
-    public Curriculum(String curr)
-    {
-        this.curriculum = readFromFile(curr);
-    }
+    private ArrayList<Course> courses;  // CPSC 1710 3
+    //private ArrayList<Category> categories;  // [*, African American Heritage, 3]
+
 
     @Override
     public String toString()
     {
-        String curriculumLs = "";
-        for (int i = 0; i < curriculum.size(); i++)
+        String curr = "";
+        for (int i = 0; i < courses.size(); i++)
         {
-            curriculumLs += (curriculum.get(i) + "\n");
+            curr += courses.get(i) + "\n";
         }
-        return curriculumLs;
+        return curr;
+        //return String.valueOf(courses);
+
     }
 
-    private static ArrayList<String> readFromFile(String fileName)
+    public Curriculum(String fileName)
     {
-        ArrayList<String> data = new ArrayList<>();
+        this.courses = readFromFile(fileName);
+        //this.categories = categories;
+    }
 
+    private ArrayList<Course> readFromFile(String fileName)
+    {
         File file = new File(fileName);
+        ArrayList<Course> courseLs = new ArrayList<>();
+
         try (Scanner sc = new Scanner(file))
         {
             while (sc.hasNext())
             {
-                data.add(sc.nextLine());
+                //Category tempCategory = new Category();
+                //ArrayList<Category> category = new ArrayList<>();
+                String dept = sc.next();
+                //System.out.println("Dept: " + dept);
+                String crn = sc.next();
+                while (!sc.hasNextInt())
+                {
+                    crn += " " + sc.next();
+                }
+                //System.out.println("CRN: " + crn);
+
+                int hours = sc.nextInt();
+                //System.out.println("Hours: " + hours);
+
+                Course tempCourse = new Course(dept, crn, hours);
+                //System.out.println("Course: " + tempCourse + "\n");
+                courseLs.add(tempCourse);
             }
         }
         catch (FileNotFoundException e)
         {
             e.printStackTrace();
         }
-        return data;
+        return courseLs;
     }
 
-    public int countHours()
+    /*public int countHours()
     {
         ArrayList<String> hours = listHours();
         int total = 0;
@@ -54,9 +76,9 @@ public class Curriculum
             total = total + numHour;
         }
         return total;
-    }
+    }*/
 
-    private ArrayList<String> listHours()
+    /*private ArrayList<String> listHours()
     {
         ArrayList<String> hours = new ArrayList<>();
         for(String course : curriculum)
@@ -65,9 +87,9 @@ public class Curriculum
             hours.add(hour);
         }
         return hours;
-    }
+    }*/
 
-    public int countCourses(String courseDept)
+    /*public int countCourses(String courseDept)
     {
         int count = 0;
         for (String course : curriculum)
@@ -102,9 +124,9 @@ public class Curriculum
             }
         }
         return count;
-    }
+    }*/
 
-    public boolean courseExists(String courseName)
+    /*public boolean courseExists(String courseName)
     {
         List<String> splitCourseName = Arrays.asList(courseName.split(" "));
         for (String course : curriculum)
@@ -120,7 +142,7 @@ public class Curriculum
             }
         }
         return false;
-    }
+    }*/
 
 
     // read and store data from file

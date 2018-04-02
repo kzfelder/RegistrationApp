@@ -1,32 +1,42 @@
-import java.util.ArrayList;
-
 public class Category
 {
-    String categoryName;
-    int hours;
-    ArrayList<Course> acceptedCourses;
+    private String asterisk;
+    private String catName;
+    private int hours;
 
-    public String getCategoryName() {
-        return categoryName;
+    @Override
+    public String toString()
+    {
+        return asterisk + " " + catName + " " + String.valueOf(hours);
     }
 
-    public void setCategoryName(String categoryName) {
-        this.categoryName = categoryName;
+    public String getAsterisk()
+    {
+        return asterisk;
     }
 
-    public int getHours() {
+    public void setAsterisk(String asterisk)
+    {
+        this.asterisk = asterisk;
+    }
+
+    public String getCatName()
+    {
+        return catName;
+    }
+
+    public void setCatName(String catName)
+    {
+        this.catName = catName;
+    }
+
+    public int getHours()
+    {
         return hours;
     }
 
-    public void setHours(int hours) {
+    public void setHours(int hours)
+    {
         this.hours = hours;
-    }
-
-    public ArrayList<Course> getAcceptedCourses() {
-        return acceptedCourses;
-    }
-
-    public void setAcceptedCourses(ArrayList<Course> acceptedCourses) {
-        this.acceptedCourses = acceptedCourses;
     }
 }
