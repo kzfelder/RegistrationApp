@@ -1,9 +1,6 @@
 import java.io.File;
 import java.io.FileNotFoundException;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
-import java.util.Scanner;
+import java.util.*;
 
 public class Curriculum
 {
@@ -87,6 +84,18 @@ public class Curriculum
             }
         }
         return count;
+    }
+
+    public boolean courseExists(Course course)
+    {
+        //Course userCourse = new Course(dept, crn, hours);
+        Set<Course> curriculum = new HashSet<>();
+        for (Course crs : courses)
+        {
+            curriculum.add(crs);
+        }
+        //System.out.println("Curr: " + curriculum);
+        return curriculum.contains(course);
     }
 
     /*public int countHours()
