@@ -28,6 +28,6 @@ public class Main
         // Determine if a course is in the curriculum.
         Course userCourse = new Course("*", "CPSC Elective", 3);
         boolean courseInCurr = curr.courseExists(userCourse);
-        System.out.println(String.valueOf(userCourse) + " in curriculum?: " + courseInCurr);
+        System.out.println("(" + String.valueOf(userCourse) + ")" + " in curriculum? " + courseInCurr);
     }
    }

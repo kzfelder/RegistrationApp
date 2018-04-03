@@ -1,3 +1,5 @@
+import java.util.Objects;
+
 public class Course {
     String department;
     String crn;
@@ -37,5 +39,14 @@ public class Course {
 
     public void setHours(int hours) {
         this.hours = hours;
+    }
+
+    @Override
+    public boolean equals(Object rhs)
+    {
+        Course temp = (Course) rhs;
+        return (getDepartment().equals(temp.getDepartment())
+                && getCrn().equals(temp.getCrn())
+                && getHours() == temp.getHours());
     }
 }
