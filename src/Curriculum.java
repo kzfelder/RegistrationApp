@@ -91,11 +91,6 @@ public class Curriculum
         return courses.contains(course);
     }
 
-    public ArrayList<Course> getCourses()
-    {
-        return courses;
-    }
-
     public Course get(int index)
     {
         return courses.get(index);
@@ -108,6 +103,10 @@ public class Curriculum
 
     public boolean completedAllCourses(Transcript transcript)
     {
+        if (transcript.countHours() < countHours())
+        {
+            return false;
+        }
         for(Course course : courses)
         {
             if (!transcript.courseExists(course))
