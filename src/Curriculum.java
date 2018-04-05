@@ -88,14 +88,7 @@ public class Curriculum
 
     public boolean courseExists(Course course)
     {
-        //Course userCourse = new Course(dept, crn, hours);
-        Set<Course> curriculum = new HashSet<>();
-        for (Course crs : courses)
-        {
-            curriculum.add(crs);
-        }
-        //System.out.println("Curr: " + curriculum);
-        return curriculum.contains(course);
+        return courses.contains(course);
     }
 
     /*public int countHours()

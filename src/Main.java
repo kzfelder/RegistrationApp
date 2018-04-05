@@ -11,7 +11,7 @@ public class Main
 
         //Calculate the total hours in the curriculum
         int totalHours = curr.countHours();
-        System.out.println( "Total hours: " + totalHours );
+        System.out.println( "Total hours [Curriculum]: " + totalHours );
 
 
         // Count the number of [DEPT] courses
@@ -24,8 +24,20 @@ public class Main
         boolean courseInCurr = curr.courseExists(userCourse);
         System.out.println("(" + String.valueOf(userCourse) + ")" + " in curriculum? " + courseInCurr);
 
-        // Transcript
-        Curriculum transcript = new Curriculum("transcript.txt");  // Kyrah's ArrayList is hidden in the Curriculum class
-        System.out.println("Transcript:\n\n" + transcript);
+
+        // Transcript milestone
+        // Read, store and write transcript
+        Transcript transcript = new Transcript("transcript.txt");  // Kyrah's ArrayList is hidden in the Curriculum class
+        System.out.println("\n\nTranscript:\n\n" + transcript);
+
+        // Calculate total hours in transcript
+        int totalTranscriptHrs = transcript.countHours();
+        System.out.println("Total hours [Transcript]: " + totalTranscriptHrs);
+
+        //TODO Determine if a transcript course is also in the curriculum
+
+        //TODO Determine if a course is also in the transcript courses
+
+        //TODO Determine if the student has completed all courses needed to graduate
     }
    }
