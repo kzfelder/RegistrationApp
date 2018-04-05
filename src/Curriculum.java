@@ -106,6 +106,18 @@ public class Curriculum
         return courses.size();
     }
 
+    public boolean completedAllCourses(Transcript transcript)
+    {
+        for(Course course : courses)
+        {
+            if (!transcript.courseExists(course))
+            {
+                return false;
+            }
+        }
+        return true;
+    }
+
     /*public int countHours()
     {
         ArrayList<String> hours = listHours();

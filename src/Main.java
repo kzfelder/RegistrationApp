@@ -47,6 +47,8 @@ public class Main
         boolean randCurrCrsInCurr = transcript.courseExists(randCurrCourse);
         System.out.println("(" + String.valueOf(randCurrCourse) + ")" + " in transcript? " + randCurrCrsInCurr);
 
-        //TODO Determine if the student has completed all courses needed to graduate
+        // Determine if the student has completed all courses needed to graduate
+        boolean studentCanGraduate = curr.completedAllCourses(transcript);
+        System.out.println("Completed All Courses: " + studentCanGraduate);
     }
    }
