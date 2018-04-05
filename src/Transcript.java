@@ -88,4 +88,19 @@ public class Transcript
     {
         return courses.contains(course);
     }
+
+    public ArrayList<Course> getCourses()
+    {
+        return courses;
+    }
+
+    public Course get(int index)
+    {
+        return courses.get(index);
+    }
+
+    public int size()
+    {
+        return courses.size();
+    }
 }

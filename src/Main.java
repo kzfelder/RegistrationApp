@@ -1,3 +1,5 @@
+import java.util.Random;
+
 public class Main
 {
     public static void main(String[] args)
@@ -34,7 +36,11 @@ public class Main
         int totalTranscriptHrs = transcript.countHours();
         System.out.println("Total hours [Transcript]: " + totalTranscriptHrs);
 
-        //TODO Determine if a transcript course is also in the curriculum
+        // Determine if a transcript course is also in the curriculum
+        Random rand = new Random();
+        Course transcriptCourse = transcript.get(rand.nextInt(transcript.size()));
+        boolean transcriptCrsInCurr = curr.courseExists(transcriptCourse);
+        System.out.println("(" + String.valueOf(transcriptCourse) + ")" + " in curriculum? " + transcriptCrsInCurr);
 
         //TODO Determine if a course is also in the transcript courses
 
