@@ -42,7 +42,10 @@ public class Main
         boolean transcriptCrsInCurr = curr.courseExists(transcriptCourse);
         System.out.println("(" + String.valueOf(transcriptCourse) + ")" + " in curriculum? " + transcriptCrsInCurr);
 
-        //TODO Determine if a course is also in the transcript courses
+        // Determine if a course is also in the transcript courses
+        Course randCurrCourse = curr.get(rand.nextInt(curr.size()));
+        boolean randCurrCrsInCurr = transcript.courseExists(randCurrCourse);
+        System.out.println("(" + String.valueOf(randCurrCourse) + ")" + " in transcript? " + randCurrCrsInCurr);
 
         //TODO Determine if the student has completed all courses needed to graduate
     }

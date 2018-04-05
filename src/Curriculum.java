@@ -91,6 +91,21 @@ public class Curriculum
         return courses.contains(course);
     }
 
+    public ArrayList<Course> getCourses()
+    {
+        return courses;
+    }
+
+    public Course get(int index)
+    {
+        return courses.get(index);
+    }
+
+    public int size()
+    {
+        return courses.size();
+    }
+
     /*public int countHours()
     {
         ArrayList<String> hours = listHours();
