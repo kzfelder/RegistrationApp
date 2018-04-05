@@ -1,9 +1,3 @@
-import java.io.File;
-import java.io.FileNotFoundException;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Scanner;
-
 public class Main
 {
     public static void main(String[] args)
@@ -29,5 +23,9 @@ public class Main
         Course userCourse = new Course("*", "CPSC Elective", 3);
         boolean courseInCurr = curr.courseExists(userCourse);
         System.out.println("(" + String.valueOf(userCourse) + ")" + " in curriculum? " + courseInCurr);
+
+        // Transcript
+        Curriculum transcript = new Curriculum("transcript.txt");  // Kyrah's ArrayList is hidden in the Curriculum class
+        System.out.println("Transcript:\n\n" + transcript);
     }
    }
