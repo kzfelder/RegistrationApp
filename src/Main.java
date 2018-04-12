@@ -6,12 +6,12 @@ public class Main
     {
         System.out.println("\n\nHello, RegistrationApp!\n");
 
-
+        // Curriculum Milestone
         // read and store data from file
         Curriculum curr = new Curriculum("curriculum.dat");  // Kyrah's ArrayList is hidden in the Curriculum class
         System.out.println("Curriculum:\n\n" + curr);
 
-        //Calculate the total hours in the curriculum
+        // Calculate the total hours in the curriculum
         int totalHours = curr.countHours();
         System.out.println( "Total hours [Curriculum]: " + totalHours );
 
@@ -50,5 +50,11 @@ public class Main
         // Determine if the student has completed all courses needed to graduate
         boolean studentCanGraduate = curr.completedAllCourses(transcript);
         System.out.println("Completed All Courses: " + studentCanGraduate);
+
+
+        // Registrar Milestone
+        // read and store data from file
+        Registrar registrar = new Registrar("registrar.txt");
+        System.out.println("Registrar:\n\n" + registrar);
     }
    }
