@@ -70,4 +70,17 @@ public class Registrar
         }
         return courseLs;
     }
+
+    public ArrayList<CourseSection> storeDeptCourses(String dept)
+    {
+        ArrayList<CourseSection> deptCourses = new ArrayList<>();
+        for (CourseSection course : courses)
+        {
+            if (course.getDepartment().equals(dept))
+            {
+                deptCourses.add(course);
+            }
+        }
+        return deptCourses;
+    }
 }

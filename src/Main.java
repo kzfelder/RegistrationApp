@@ -1,3 +1,4 @@
+import java.util.ArrayList;
 import java.util.Random;
 
 public class Main
@@ -53,8 +54,13 @@ public class Main
 
 
         // Registrar Milestone
-        // read and store data from file
+        // Read and store data from file
         Registrar registrar = new Registrar("registrar.txt");
         System.out.println("Registrar:\n\n" + registrar);
+
+        // Separately store all [DEPT] courses
+        String dept = "MATH";
+        ArrayList<CourseSection> deptCourses = registrar.storeDeptCourses(dept);
+        System.out.println(dept + " courses: " + deptCourses);
     }
    }
